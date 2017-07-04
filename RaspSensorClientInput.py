@@ -52,8 +52,8 @@ def sendInputs():
             connection.flush()
             stream.seek(0)
             connection.write(stream.read())
-            connection.write(str(datetime.datetime.now()))
-            connection.write(getDistance1())
+            #connection.write(str(datetime.datetime.now()))
+            #connection.write(getDistance1())
             if time.time() - start > 600:
                 break
             stream.seek(0)
