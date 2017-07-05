@@ -10,21 +10,21 @@ import struct
 import datetime
 import io
 import RPi.GPIO as GPIO
-import picamera.PiCamera
+import picamera
 
 #pins for the distance sensors
 TRIG1 = 4
 ECHO1 = 18
 #set up camera and GPIO pins
-camera = PiCamera()
+camera = picamera.PiCamera()
 camera.resolution = (640,480)
 camera.framerate = 24
 camera.start_preview() #warm up
 time.sleep(2)
 
-GPIO.setMode(GPIO.BCM)
-GPIO.setup(TRIG1, GPIO.OUT)
-GPIO.setup(ECHO1, GPIO.IN)
+#GPIO.setMode(GPIO.BCM)
+#GPIO.setup(TRIG1, GPIO.OUT)
+#GPIO.setup(ECHO1, GPIO.IN)
 
 
 def getDistance1():
@@ -42,13 +42,13 @@ def getDistance1():
 def sendInputs():
     #prepare the client socket
     client_socket = socket.socket()
-    client_socket.connect(('192.168.2.9', 6116))
+    client_socket.connect(('192.168.2.2', 6116))
     connection = client_socket.makefile('wb')
     try:
         start = time.time()
         stream = io.BytesIO()
         for foo in camera.capture_continuous(stream, 'jpeg'):
-            connection.write(struct.pack('<L', stream.tell(),distance))
+            connection.write(struct.pack('<L', stream.tell()))
             connection.flush()
             stream.seek(0)
             connection.write(stream.read())
@@ -81,7 +81,7 @@ def readInputs():
         camera.capture        
         
 def main():
-    pass
+    sendInputs()
 if __name__ == '__main__':
     main()
 
