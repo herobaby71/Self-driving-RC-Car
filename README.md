@@ -12,3 +12,4 @@ The Project can be divided into 5 steps:
 Step 1/Setting up the Raspberry Pi and the RC Car:
    First, I need a way to send signal to the RC Car from the Raspberry Pi. In order to do so, I use bskari lib: https://github.com/bskari/pi-rc
    
+ad
