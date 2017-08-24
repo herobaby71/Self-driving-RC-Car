@@ -38,3 +38,4 @@ Step 3) Train a model (Feel free to use other libraries such as Keras or Tensorf
 2) Any furthur from this point, I cannot say because the dataset I collected is so bad that the car is doing random moves. However, if you got a good car, you can take one step furthur than me and build a great self-driving RC car :). Side Note: if possible, you can use Tensorflow on Google Cloud compute engine with GPU to train even a better, deeper conv model.
 
 Extra) Recognizing lanes (white papers) using OpenCV. See Lane-Finding.py based on a tutorial on PythonProgramming.net
+![lane1](https://user-images.githubusercontent.com/26393308/29647520-86ab7274-8857-11e7-8175-577826d93391.png)
