@@ -2,8 +2,8 @@
 ![car](https://user-images.githubusercontent.com/26393308/29645509-0d6d2002-884c-11e7-8429-4c4056190753.jpg)
 
 What I needed:
-1) Raspberry pi, picamera, SD card, monitor, external mouse, female-male jumper wires.
-2) External battery pack
+1) Raspberry pi 3 model B, picamera, SD card, monitor, external mouse, female-male jumper wires.
+2) External battery pack 5V, ~1A -> 2.5A.
 3) A GOOD RC Car (The project will be VERY troublesome if you have a mediocre RC Car with mediocre servo). Make sure that the car is controllable in both speed and direction. A fast car will make it hard to control in general. An inconsistent servo will make it hard to predict the angle to which the car moves when turn. Do Not make the same mistake as me.
 
 The goal of this project is to:
