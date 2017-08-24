@@ -4,6 +4,11 @@ import socket
 
 from common import server_up
 
+
+
+
+keys = {0:"forward", 1:"forward_left", 2:"forward_right", 3:"reverse",
+                4:"reverse_left", 5:"reverse_right", 6:"idle", 7:"right", 8:"left"}
 #signal repeats list:
 #Forward: 21
 #Left: 126
@@ -62,14 +67,19 @@ def control(host, port, commands, com):
         sock.sendto(commands[com], (host, port))
     except TypeError:
         sock.sendto(bytes(commands[com], 'utf-8'), (host,port))
-
+        
+def simpleControl(com):
+    read_file = open("red-lamborghini.json")
+    commands = file_to_commands(read_file)
+    control('192.168.2.7', 12345, commands, keys[com])
+    
 def main():
     read_file = open("red-lamborghini.json")
     commands = file_to_commands(read_file)
     server = str(input("enter server:"))
     port = 12345
-    keys = {0:"forward", 1:"forward_left", 2:"forward_right", 3:"left",
-                4:"reverse", 5:"reverse_left", 6:"reverse_right", 7:"right", 8:"idle"}
+    keys = {0:"forward", 1:"forward_left", 2:"forward_right", 3:"reverse",
+                4:"reverse_left", 5:"reverse_right", 6:"idle", 7:"right", 8:"left"}
     print(keys)
     while(True):
         com = int(input("enter command through number:"))
