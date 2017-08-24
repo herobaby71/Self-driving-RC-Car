@@ -30,7 +30,7 @@ Step 2) Use Socketing to feed images from the Raspberry Pi to the Computer
 Step 2.5) Putting everything together:
 1) Remote desktop to your RaspPi, start bskari pi_pcm so that control.py able to send signal command to the RaspPi.
 2) Another Remote desktop to your RaspPi, start RaspSensorClientInput.py
-3) On your Desktop, run LaptopServerDataCollection.py, you will see a pygame screen that will take arrow inputs from your keyboard. Press 's' to start collecting data and 'p' to pause. Quit pygame windows if done collecting. The program will save the collected data to an .npy file.
+3) On your Desktop, run LaptopServerDataCollection.py, you will see a pygame window with piCamera vision that will take arrow inputs from your keyboard. Press 's' to start collecting data and 'p' to pause. Quit pygame window if done collecting. The program will save the collected data to an .npy file.
 
 Step 3) Train a model (Feel free to use other libraries such as Keras or Tensorflow)
 1) I created my own Neuronetwork from scratch using numpy and sklearn for second order l-bfgs optimizing method. However, my model only have sigmoid activation function, which cannot avoid gradient vanishing problem. ELU or ReLU activation functions probably works better.
