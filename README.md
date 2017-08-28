@@ -30,12 +30,12 @@ Step 2) Use Socketing to feed images from the Raspberry Pi to the Computer
 Step 2.5) Putting everything together:
 1) Remote desktop to your RaspPi, start bskari pi_pcm so that control.py able to send signal command to the RaspPi.
 2) Another Remote desktop to your RaspPi, start RaspSensorClientInput.py
-3) On your Desktop, run LaptopServerDataCollection.py, you will see a pygame window with piCamera vision that will take arrow inputs from your keyboard. Press 's' to start collecting data and 'p' to pause. Quit pygame window if done collecting. The program will save the collected data to an .npy file.
+3) On your Desktop, run LaptopServerDataCollection.py, you will see a pygame window with piCamera vision that will take arrow inputs from your keyboard. Press 's' to start collecting data and 'p' to pause. Quit pygame window if done collecting. The program will save the collected data to an .npy file (~10000 points).
 
 Step 3) Train a model (Feel free to use other libraries such as Keras or Tensorflow)
 1) I created my own Neuronetwork from scratch using numpy and sklearn for second order l-bfgs optimizing method. However, my model only have sigmoid activation function, which cannot avoid gradient vanishing problem. ELU or ReLU activation functions probably works better.
 1.5) Balance your data
-2) Any furthur from this point, I cannot say because the dataset I collected is so bad that the car is doing random moves. However, if you got a good car, you can take one step furthur than me and build a great self-driving RC car :). 
+2) Train your data. This has to be the most exciting part because you are about to know the result. My result was not great because of my cheap and inconsistent car servo. However, the project in general was great. I learned alot about the Raspberry pi and picamera. However, if you got a good car, you can take one step furthur than me and build a great self-driving RC car :). 
 
 Extra) Recognizing lanes (white papers) using OpenCV. See Lane-Finding.py based on a tutorial on PythonProgramming.net
 ![lane1](https://user-images.githubusercontent.com/26393308/29647520-86ab7274-8857-11e7-8175-577826d93391.png)
